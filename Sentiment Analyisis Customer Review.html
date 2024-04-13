@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Customer Reviews</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Light grey background */
+        }
+        .content {
+            padding: 20px 60px;
+        }
+        h1, h2 {
+            text-align: center;
+            margin: 20px 0 30px;
+            color: #343a40; /* Dark grey for text */
+        }
+        p, li {
+            margin: 10px 0 20px;
+            line-height: 1.6;
+        }
+        a {
+            color: #007bff; /* Brand color for links */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .embed-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin-top: 30px;
+            margin-bottom: -280px; /* Reduced margin bottom */
+        }
+        .embed-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60%; /* Maintained aspect ratio */
+        } 
+        ul {
+            list-style-type: none; /* Removes bullet points */
+        }
+        nav {
+            background-color: #333; /* Dark background for the nav bar */
+            overflow: hidden;
+            width: 100%; /* Ensure nav bar spans the full width */
+            padding: 0 60px; /* Same horizontal padding as the container for alignment */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="Biography.html">Biography</a>
+    <a href="Resume.html">Resume</a>
+    <a href="More About Me.html">More About Me</a>
+    <a href="Blogs.html">Blogs</a>
+    <a href="Media.html">Media</a>
+</nav>
+
+<div class="content">
+    <h1>Sentiment Analysis for Customer Reviews</h1>
+    <p>In this project, Leon Kozak, Vincent Stilz, and I worked on a dataset containing 568,264 rows of sentiment data based on online product reviews. The dataset includes columns such as Profile Name, a rating of the product (1-5 stars, 5 being best), and the review itself in text form.</p>
+    <p>If interested, you can explore our code <a href="https://colab.research.google.com/drive/1MvbOjfwQWRoWvNZTk33hZCgu_0EcqdCI#scrollTo=e1593fe1-04c1-46c3-b859-0aacdbcab3bd">HERE</a> and have a look at the Google Sheets <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTPNGIQ5dahyrGzRO1paTpHdZ9Z3FGR2vTi4LCHwKOwB25hA_Y_R_P7m-zIEfmt4rPszpjoejb3-vs-/pubhtml">HERE.</a> </p>
+    
+    <h2>Data Set Analysis</h2>
+    <p>First, we examined the data. This showed us, that the data is heavily leaning towards positive product ratings. Next, we looked at one example review and tokenized it, using <strong>NLTK</strong>. In the next step, we used <strong>Vader Sentiment Scoring</strong>. First, we tested the Vader scoring on some very explicit example sentences, such as "<em>I am so happy</em>". This testing helped us to get a feeling for how this scoring works. Then, we let the polarity score, which gave each review a score for negativity, neutrality, positivity and then a compounded score, run over the entire data set. This showed us, that the higher the polarity score, the higher the product rating (Score). Furthermore, we used a pre-trained tokenizer (<strong>Roberta Model</strong>), which was trained on large quantities of twitter data. We then compared the scores of the Vader Sentiment Scores with the Roberta Sentiment Scores. Ultimately, we checked for incorrect sentiment scores, meaning cases, in which a high score was given by the user, but our models thought that the review was negative and vice versa. This showed us, that in certain cases, sentiment analysis is still flawed. Still, for large data sets, it is able to detect sentiment correctly.</p>
+    
+    <p>The following graph showcases the results of the Vader analysis:</p>
+
+    <div class="embed-container">
+        <img src="Sentiment_Graph.jpg" alt="Sentiment Analysis Graph">
+    </div>
+    
+    <p><strong>Positive Plot (Left):</strong> Shows the average positive sentiment score for each review score. Higher review scores (4 and 5) have higher positive sentiment scores.</p>
+    <p><strong>Neutral Plot (Middle):</strong> Depicts the average neutral sentiment score across different review scores, which appears relatively constant across all review scores, suggesting that regardless of the review score, there's a consistent level of neutral language used in the reviews.</p>
+    <p><strong>Negative Plot (Right):</strong> Illustrates the average negative sentiment score for each review score. The negative sentiment is higher for lower review scores and decreases as the review scores get higher. This indicates that reviews with lower scores (1 and 2) contain more negative sentiment, which is consistent with the negative experience being reported.</p>
+    <p>The error bars on each bar  represent the variability of the sentiment scores within each review score category, indicating how much sentiment scores vary from the mean.</p>
+    <p>In case you have any other question for the dataset or the analysis, be sure to reach out to me. :)</p>
+</div>
+</body>
+</html>

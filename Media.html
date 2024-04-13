@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Collection</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Light background to reduce strain */
+        }
+        /* Apply padding specifically to content areas, not globally to the body */
+        .content {
+            padding: 20px 60px; /* Increase padding for more space */
+        }
+        h1 {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 0px;
+        font-size: 2.5em;
+        color: #333;
+        }
+        h2 {
+            margin-top: 30px; /* More space before each section heading */
+            color: #343a40; /* Slightly darker than default for better readability */
+        }
+        p {
+            margin: 10px 0 20px; /* Increased bottom margin for paragraph spacing */
+            line-height: 1.6; /* Enhanced line height for readability */
+        }
+        ul {
+            margin-bottom: 30px; /* More space after lists for separation */
+        }
+        li {
+            margin: 5px 0; /* Space between list items */
+        }
+        a {
+            text-decoration: none; /* No underline for a cleaner look */
+        }
+        a:hover {
+            text-decoration: underline; /* Underline on hover for interactivity */
+        }
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px; /* Reduced padding on smaller screens */
+            }
+        }
+        nav {
+            background-color: #333; /* Dark background for the nav bar */
+            overflow: hidden;
+            width: 100%; /* Ensure nav bar spans the full width */
+            margin: 0; /* Remove any default margin */
+            padding: 0 60px; /* Same horizontal padding as the container for alignment */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .embed-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Biography.html">Biography</a>
+        <a href="Resume.html">Resume</a>
+        <a href="More About Me.html">More About Me</a>
+        <a href="Blogs.html">Blogs</a>
+        <a href="Media.html">Media</a>
+    </nav>
+<div class="content">
+    <h1>Media</h1>
+    <p>Get to know insightful podcasts, helpful videos, and interesting websites on this page!</p>
+
+<div class="container">
+    <h2>Podcasts</h2>
+    <p>Podcasts are a great way to build some knowledge while completing other tasks or during a good workout for example. These podcasts are some of my favorites. Take a listen!</p>
+    <h3>How Artificial Intelligence Enters Businesses</h3>
+    <p>Get some knowledge as to how AI will impact the industry. (German Podcast)</p>
+    <iframe src="https://open.spotify.com/embed/episode/5Ld1pdp4reQwEFcCzcTAWK" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+    <h3>Revolutionize Your Data Analysis in Business Analysis with ChatGPT: Excel Integration and More!</h3>
+    <p>Learn how to enable yourself and your company with AI.</p>
+    <iframe src="https://open.spotify.com/embed/episode/5qcVyUGYprgAM9blfXwXsH" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+    <h3>Become A Business Analyst in 30 minutes | business analyst course for beginners</h3>
+    <p>Get some insights on how to become a business analyst in this podcast.</p>
+    <iframe src="https://open.spotify.com/embed/episode/4ynGnxXKdIL5cNQ531kyBH" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+</div>
+
+<div class="container">
+    <h2>Websites</h2>
+    <h3>These websites contain interesting information, whether you just want to inform yourself on the topic of Business Analytics or are interested in pursuing a career in the field.</h3>
+    <h3>BUSINESS ANALYTICS: WHAT IT IS & WHY IT'S IMPORTANT</h3>
+    <p>Get an Overview of Business Analytics, provided by Harvard Business School for free:</p>
+    <a href="https://online.hbs.edu/blog/post/importance-of-business-analytics">Read More</a>
+    
+    <h3>Master’s in Business Analytics</h3>
+    <p>Help kickstart your career in Business Analytics at the renowned university NOVA SBE in Lisbon, Portugal:</p>
+    <a href="https://www.novasbe.unl.pt/en/programs/masters/business-analytics/program">Read More</a>
+    
+    <h3>Data Analyst Profile Example</h3>
+    <p>Get an overview of an exemplary website from a data professional (Maggie Wolff):</p>
+    <a href="https://maggiewolff.github.io">Visit Website</a>
+</div>
+
+<div class="container">
+    <h2>Videos</h2>
+    <p>In the era of digitalization, helpful content and knowledge is available more than ever before. Have a look at the provided videos to gain valuable insights!</p>
+    <div class="video-section">
+        <h3>How to Create a Beautiful Python Visualization Dashboard With Panel/Hvplot</h3>
+        <p>Learn how to build visualization dashboards using Python with this YouTube video:</p>
+        <div class="embed-container">
+            <iframe src="https://www.youtube.com/embed/uhxiXOTKzfs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="video-section">
+        <h3>How I Would Lean to be a Data Analyst</h3>
+        <p>Get advice on how you can pursue a career as a data analyst:</p>
+        <div class="embed-container">
+            <iframe src="https://www.youtube.com/embed/CC66RXeTn_4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="video-section">
+        <h3>Intermediate Python Programming Course</h3>
+        <p>Boost your Python skills to another level with this almost 6-hour-long course for free:</p>
+        <div class="embed-container">
+            <iframe src="https://www.youtube.com/embed/HGOBQPFzWKo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Prices and Clustering</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Light grey background */
+        }
+        .content {
+            padding: 20px 60px;
+        }
+        h1, h2 {
+            text-align: center;
+            margin: 20px 0 30px;
+            color: #343a40; /* Dark grey for text */
+        }
+        p, li {
+            margin: 10px 0 20px;
+            line-height: 1.6;
+        }
+        a {
+            color: #007bff; /* Brand color for links */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .embed-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .embed-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60%;
+            height: 70%;
+        }
+        nav {
+            background-color: #333; /* Dark background for the nav bar */
+            overflow: hidden;
+            width: 100%; /* Ensure nav bar spans the full width */
+            padding: 0 60px; /* Same horizontal padding as the container for alignment */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="Biography.html">Biography</a>
+    <a href="Resume.html">Resume</a>
+    <a href="More About Me.html">More About Me</a>
+    <a href="Blogs.html">Blogs</a>
+    <a href="Media.html">Media</a>
+</nav>
+
+<div class="content">
+    <h1>Vehicle Prices and Clustering</h1>
+    <p>The "Vehicle Sales and Market Trends Dataset" provides a comprehensive collection of information pertaining to the sales transactions of various vehicles. The dataset can be found under the following <a href="https://www.kaggle.com/datasets/syedanwarafridi/vehicle-sales-data">link on Kaggle.</a></p>
+    <p>In the dataset analysis by Leon Kozak, Vincent Stilz, and I, two types of machine learning were used. The following text outlines the steps we took to analyze the dataset. If interested, you can explore our code <a href="https://colab.research.google.com/drive/1MvbOjfwQWRoWvNZTk33hZCgu_0EcqdCI#scrollTo=e1593fe1-04c1-46c3-b859-0aacdbcab3bd">HERE</a>.</p>
+    
+    <h2>Initial Exploration:</h2>
+    <p>Basic statistical summaries and head of the DataFrame provide an initial understanding of the data's structure and key statistics. The dataset undergoes cleaning to remove rows with missing values, specifically targeting crucial attributes. Further cleaning includes normalization of text fields to lowercase, handling missing values in 'transmission' by labeling them as 'unknown', and filling missing 'condition' values with the median.</p>
+    
+    <h2>Supervised Learning:</h2>
+    <p>Features are selected for modeling, with categorical features undergoing one-hot encoding and numerical features being passed as they are. The target variable is 'sellingprice'. A linear regression model is trained, showing an ability to explain approximately 54.7% of the variance in vehicle selling prices, though with a notable mean squared error (MSE), indicating room for improvement. An upgrade to a Random Forest model significantly enhances prediction accuracy, reducing the MSE considerably and explaining about 96.82% of the variance in selling prices. This suggests a substantial improvement over the linear model.</p>
+    
+    <h2>Unsupervised Learning - Clustering:</h2>
+    <p>We then moved on to the clustering of the cars. The selling price column is dropped to focus on clustering vehicles based on features not directly related to their selling price. Elbow Method: Utilized to determine the optimal number of clusters, indicating a balance between within-cluster sum of squares (SSE) and the number of clusters. Then, vehicles are clustered into an optimal number of groups using KMeans based on selected features, with further dimensionality reduction and visualization to understand the data's structure.</p>
+    <p>This visualization provided an overview of the clusters:</p>
+    <div class="embed-container">
+        <img src="Cluster.png" alt="Clustering Visualization">
+    </div>
+</div>
+</body>
+</html>

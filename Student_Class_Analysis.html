@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Class Dataset Analysis</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Light grey background */
+        }
+        .content {
+            padding: 20px 60px;
+        }
+        h1, h2 {
+            text-align: center;
+            margin: 20px 0 30px; /* Space above and below headings */
+            color: #343a40; /* Dark grey for text */
+        }
+        p {
+            margin: 10px 0 20px;
+            line-height: 1.6;
+        }
+        a {
+            color: #007bff; /* Brand color for links */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .embed-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .code-container {
+            background-color: #282c34; /* Dark background for code block */
+            color: #9DA5B4; /* Light grey color for text */
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 5px; /* Slightly rounded corners for the code container */
+            font-family: "Courier New", Courier, monospace; /* Monospaced font for code */
+        }
+        pre {
+            margin: 0;
+        }
+        code {
+            color: #79C0FF; /* Light blue color for code */
+        }
+        nav {
+            background-color: #333; /* Dark background for the nav bar */
+            overflow: hidden;
+            padding: 0 60px; /* Same horizontal padding as the container for alignment */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+        <a href="index.html">Home</a>
+        <a href="Biography.html">Biography</a>
+        <a href="Resume.html">Resume</a>
+        <a href="More About Me.html">More About Me</a>
+        <a href="Blogs.html">Blogs</a>
+        <a href="Media.html">Media</a>
+</nav>
+
+<div class="content">
+<h1>Exploring University Class Dataset</h1>
+
+<p>As a student, I find it interesting to explore the correlation between different factors in university. For instance, have you ever wondered if your grades are related to any other factors? The following analysis presents insights from a university class dataset.</p>
+
+<h2>Data Cleaning in Python</h2>
+
+<p>To analyze the dataset, it first needed to be cleaned, as there were duplicate data rows and outliers. Also, a part of the task in analyzing the data was to find values for five missing values marked as xxxxx in the Excel sheet.</p>
+
+<div class="embed-container">
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRG-qxFXi7R9xx4MVwQVhmPmL4YJbdgJS4ZdXEjWUXirSIpLo0-BEBRJbZIN7IH0JUrI2eH2r-WQ6pG/pubhtml?widget=true&amp;headers=false"></iframe>
+</div>
+
+<p>For an in-depth analysis, view the Python notebook here: <a href="https://colab.research.google.com/drive/1e5pFgVL7DdSG6DP3f8Enoz7qAiWTsO5p?usp=sharing" target="_blank">Python Analysis Notebook</a>.</p>
+
+<h3>Correlation Matrix Visualization Code and Visualization</h3>
+<p>The following code is a snippet from the analysis and visualizes the correlation between the numeric categories of the dataset. Please find the entire Python analysis above.</p>
+
+<div class="code-container">
+<pre><code># show correlation matrix
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Select columns with numeric datatypes only
+df_numeric = data_cleaned_filtered.select_dtypes(include=[np.number]) # do this so that only numeric data types are used
+
+correlation_matrix = df_numeric.corr()
+# Design the correlation matrix
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, fmt=".2f", cmap='coolwarm') # coolwarm for coloring
+plt.show()
+</code></pre>
+</div>
+<div class="image-container">
+    <img src="Correlation_Matrix.png" alt="Correlation Matrix" style="width: 100%; max-width: 858px; height: auto;">
+</div>
+
+<h2>Further Analysis in Excel</h2>
+<p>After the analysis in Python, further analysis in Excel was made. Using Excel, I started to calculate the five missing values (xxxxx) in the spreadsheet. After that, the dataset demographics tab of the dataset was merged with the second tab “personalities” and cleaned again in Excel.
+
+ <p>In the dataset, the first tab shows the first tab after the Python data cleaning. The next five tabs with MV in the name show the calculation of each missing value using regression calculated by Excel Analysis tools. The next 3 datasets show the dataset firstly after adding the missing values, secondly after joining the dataset demographics tab with the personalities tab, and thirdly after the cleaning of the joined dataset in Excel. Lastly, a new correlation matrix was built and graphics for male-female personality traits and personality traits were designed.</p>
+
+ <p>Please find the file for a more detailed overview here:</p>
+<div class="embed-container">
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQop-mx-5pxJ2UwHflVqn8rOcw8GnacaQ5_ULKULlPiLcEYzfzBkp3MYpTAn9a0P1VoKxGtzel_ajFF/pubhtml?widget=true&amp;headers=false"></iframe>
+</div>
+    
+<h2>Analysis Insights and Storytelling</h2>
+
+<p>The results of the Excel Analysis were then taken to build a story on the university to answer the following questions:</p>
+
+<p class="question">Which student profile is likely to score the highest or lowest grades in year 1?</p>
+
+<p class="question">How does a person’s gender influence their physiology and personality traits?</p>
+ 
+<p class="question">How do personality traits influence one another?</p>
+
+<p>The results of the question and the exact data cleaning and analysis process in both Python and Excel can be seen in the report below:</p>
+
+<div class="embed-container">
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vQBaYnwrRGKER_3mxWiB0KKRWusNDiMnx6es-PoRcVyiO_MERFbUbxGh1TjTly3fwlYYC4FEv_eUDJq/pub?embedded=true"></iframe>
+</div>
+</div>
+</body>
+</html>
