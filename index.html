@@ -39,13 +39,6 @@
             text-align: center;
             margin: 20px 0 30px; /* Adjusted margin for more space above and below */
         }
-        a {
-            color: #007bff; /* Brand color for links */
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
         p {
             margin: 10px 0 20px; /* Increased bottom margin for paragraph spacing */
             line-height: 1.6; /* Enhanced line height for readability */
@@ -57,9 +50,19 @@
         ul {
             padding-left: 0; /* Removes default indentation */
         }
-        a {
-            color: black;       /* Sets the text color to black */
-            text-decoration: none; /* Removes underline from links */
+        ul a {
+            background-color: #000; /* Button background color changed to black */
+            color: #fff; /* Text color changed to white */
+            padding: 10px 15px; /* Padding inside the button */
+            border-radius: 5px; /* Rounded corners for the button */
+            box-shadow: 0 2px 2px rgba(0,0,0,0.2); /* Optional: adds a subtle shadow */
+            display: inline-block; /* Necessary for padding and margins to work inside <a> */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+            text-align: left; /* Align text to the left */
+        }
+        ul a:hover {
+            background-color: #555; /* Hover color changed to a lighter grey */
+            text-decoration: none; /* No underline on hover */
         }
     </style>
 </head>
@@ -76,7 +79,7 @@
 
 <div class="content">
     <h1>Business Analytics Portfolio Lasse Willen</h1>
-    <p>Hey there, this is my Business Analytics Portfolio. Please find my Business Analytics projects by clicking on your project of interest below and navigate to other pages using the navigation bar:</p>
+    <p>Hey there, this is my Business Analytics Portfolio. Please find my Business Analytics projects by clicking on your project of interest below. Alternatively, navigate to other pages using the navigation bar:</p>
     
     <ul>
         <li><a href="PPT_Project.html">Visualizing Second Hand Car Purchases in Ireland</a></li>
